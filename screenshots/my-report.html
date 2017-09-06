@@ -1,0 +1,58 @@
+<html><head><meta charset="utf-8"><style>body { font-family: Arial; }ul { list-style-position: inside; }span.passed { padding: 0 1em; color: green; }span.failed { padding: 0 1em; color: red; }span.pending { padding: 0 1em; color: orange; }span.stacktrace { white-space: pre; border: 1px solid rgb(0, 0, 0); font-size: 9pt; padding: 4px; background-color: rgb(204, 204, 204); }</style><script type="text/javascript">function showhide(id) {var e = document.getElementById(id);e.style.display = (e.style.display == "block") ? "none" : "block";}function buildQuickLinks() {var failedSpecs = document.querySelectorAll("li.failed");var quickLinksContainer = document.getElementById("quickLinks");if (!quickLinksContainer) return;for (var i = 0; i < failedSpecs.length; ++i) {var li = document.createElement("li");var a = document.createElement("a");a.href = "#" + failedSpecs[i].id;a.textContent = failedSpecs[i].dataset.name + "  (" + failedSpecs[i].dataset.browser + ")";li.appendChild(a);quickLinksContainer.appendChild(li);}}function updatePassCount() {var totalPassed = document.querySelectorAll("li.passed").length;var totalFailed = document.querySelectorAll("li.failed").length;var totalSpecs = totalFailed + totalPassed;console.log("passed: %s, failed: %s, total: %s", totalPassed, totalFailed, totalSpecs);document.getElementById("summaryTotalSpecs").textContent = document.getElementById("summaryTotalSpecs").textContent + totalSpecs;document.getElementById("summaryTotalFailed").textContent = document.getElementById("summaryTotalFailed").textContent + totalFailed;if (totalFailed) {document.getElementById("summary").className = "failed";}}function start() {updatePassCount();buildQuickLinks();}window.onload = start;</script></head><body><h1>Report</h1><div id="summary" class="passed"><h4>Summary</h4><ul><li id="summaryTotalSpecs">Total specs tested: </li><li id="summaryTotalFailed">Total failed: </li></ul></div><ul style="list-style-type:none"><h4>DTNA (33 s)</h4><li id="2b041c20-40d9-11e7-9029-fb2d2e828b5a" class="passed" data-spec="spec0" data-name="sign up success" data-browser="chrome"><span class="passed">&#10003;</span><a href="fdd4b122b75d3af070edc6755e053082.png">sign up success</a>(11 s)</li><li id="2b041c21-40d9-11e7-9029-fb2d2e828b5a" class="failed" data-spec="spec1" data-name="sign up duplicate user" data-browser="chrome"><span class="failed">&#10007;</span><a href="4c3ab488dbb72429e0ebb4c20e27121a.png">sign up duplicate user</a>(8 s)<ul><li>Expected &#39;WELCOME! LET&#39;S GET STARTED.&#39; to equal &#39;A user with the specified email already exists.&#39;. [<a href="javascript:showhide('spec1-MAC-chrome-58.0.3029.1100')">stack</a>]<br/><span style="display: none" id="spec1-MAC-chrome-58.0.3029.1100" class="stacktrace">Error: Failed expectation
+    at Object.&lt;anonymous&gt; (/Users/phantom/Sites/DTNA/v2signUp-spec.js:95:37)
+    at /usr/local/lib/node_modules/protractor/node_modules/jasminewd2/index.js:110:25
+    at new ManagedPromise (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1067:7)
+    at ControlFlow.promise (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2396:12)
+    at schedulerExecute (/usr/local/lib/node_modules/protractor/node_modules/jasminewd2/index.js:95:18)
+    at TaskQueue.execute_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2970:14)
+    at TaskQueue.executeNext_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2953:27)
+    at asyncRun (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2860:25)
+    at /usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:676:7</span></li></ul></li><li id="2b041c22-40d9-11e7-9029-fb2d2e828b5a" class="failed" data-spec="spec2" data-name="sign up vin not found" data-browser="chrome"><span class="failed">&#10007;</span><a href="56aa5f6438ca4329ea259f1b649322ab.png">sign up vin not found</a>(5 s)<ul><li>Expected &#39;WELCOME! LET&#39;S GET STARTED.&#39; to equal &#39;The provided VIN was not found in any fleet.&#39;. [<a href="javascript:showhide('spec2-MAC-chrome-58.0.3029.1100')">stack</a>]<br/><span style="display: none" id="spec2-MAC-chrome-58.0.3029.1100" class="stacktrace">Error: Failed expectation
+    at Object.&lt;anonymous&gt; (/Users/phantom/Sites/DTNA/v2signUp-spec.js:121:37)
+    at /usr/local/lib/node_modules/protractor/node_modules/jasminewd2/index.js:110:25
+    at new ManagedPromise (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1067:7)
+    at ControlFlow.promise (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2396:12)
+    at schedulerExecute (/usr/local/lib/node_modules/protractor/node_modules/jasminewd2/index.js:95:18)
+    at TaskQueue.execute_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2970:14)
+    at TaskQueue.executeNext_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2953:27)
+    at asyncRun (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2860:25)
+    at /usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:676:7</span></li><li>Failed: No element found using locator: by.buttonText(&quot;Back&quot;) [<a href="javascript:showhide('spec2-MAC-chrome-58.0.3029.1101')">stack</a>]<br/><span style="display: none" id="spec2-MAC-chrome-58.0.3029.1101" class="stacktrace">NoSuchElementError: No element found using locator: by.buttonText(&quot;Back&quot;)
+    at elementArrayFinder.getWebElements.then (/usr/local/lib/node_modules/protractor/lib/element.ts:851:17)
+    at ManagedPromise.invokeCallback_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1366:14)
+    at TaskQueue.execute_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2970:14)
+    at TaskQueue.executeNext_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2953:27)
+    at asyncRun (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2813:27)
+    at /usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:676:7
+    at process._tickCallback (internal/process/next_tick.js:103:7)Error
+    at ElementArrayFinder.applyAction_ (/usr/local/lib/node_modules/protractor/lib/element.ts:482:23)
+    at ElementArrayFinder.(anonymous function) [as click] (/usr/local/lib/node_modules/protractor/lib/element.ts:96:21)
+    at ElementFinder.(anonymous function) [as click] (/usr/local/lib/node_modules/protractor/lib/element.ts:873:14)
+    at Object.&lt;anonymous&gt; (/Users/phantom/Sites/DTNA/v2signUp-spec.js:124:40)
+    at /usr/local/lib/node_modules/protractor/node_modules/jasminewd2/index.js:110:25
+    at new ManagedPromise (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1067:7)
+    at ControlFlow.promise (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2396:12)
+    at schedulerExecute (/usr/local/lib/node_modules/protractor/node_modules/jasminewd2/index.js:95:18)
+    at TaskQueue.execute_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2970:14)
+    at TaskQueue.executeNext_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2953:27)
+From: Task: Run it(&quot;sign up vin not found&quot;) in control flow
+    at Object.&lt;anonymous&gt; (/usr/local/lib/node_modules/protractor/node_modules/jasminewd2/index.js:94:19)
+    at attemptAsync (/usr/local/lib/node_modules/protractor/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1980:24)
+    at QueueRunner.run (/usr/local/lib/node_modules/protractor/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1935:9)
+    at /usr/local/lib/node_modules/protractor/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1962:16
+    at /usr/local/lib/node_modules/protractor/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1905:9
+    at /usr/local/lib/node_modules/protractor/node_modules/jasminewd2/index.js:64:48
+    at ControlFlow.emit (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/events.js:62:21)
+    at ControlFlow.shutdown_ (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2565:10)
+    at shutdownTask_.MicroTask (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2490:53)
+    at MicroTask.asyncRun (/usr/local/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2619:9)
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (/Users/phantom/Sites/DTNA/v2signUp-spec.js:101:5)
+    at addSpecsToSuite (/usr/local/lib/node_modules/protractor/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:867:25)
+    at Env.describe (/usr/local/lib/node_modules/protractor/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:836:7)
+    at describe (/usr/local/lib/node_modules/protractor/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3576:18)
+    at Object.&lt;anonymous&gt; (/Users/phantom/Sites/DTNA/v2signUp-spec.js:5:1)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)</span></li></ul></li><li id="2b044330-40d9-11e7-9029-fb2d2e828b5a" class="passed" data-spec="spec3" data-name="sign up incomplete fields modal" data-browser="chrome"><span class="passed">&#10003;</span><a href="a60972e25dfff2f52d2a2a55a09d46cb.png">sign up incomplete fields modal</a>(6 s)</li><li id="2b044331-40d9-11e7-9029-fb2d2e828b5a" class="passed" data-spec="spec4" data-name="sign up error field messages" data-browser="chrome"><span class="passed">&#10003;</span><a href="63a684f553b2e410a726f535006f7599.png">sign up error field messages</a>(4 s)</li></ul><a href="javascript:showhide('2b044332-40d9-11e7-9029-fb2d2e828b5a')">Toggle Configuration</a><div class="config" id="2b044332-40d9-11e7-9029-fb2d2e828b5a" style="display: none"><h4>Configuration</h4><li>Jasmine version:  2.5.2</li><li>Browser name:  chrome</li><li>Browser version:  58.0.3029.110</li><li>Platform:  MAC</li><li>Javascript enabled:  true</li><li>Css selectors enabled:  true</li></div></body></html>
